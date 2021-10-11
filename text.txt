@@ -1,0 +1,61 @@
+드래그하고 ctrl + d 하면 다른 곳에 위치하는 같은 단어 선택 됨 
+border-radius 로 원을 만들고 싶다면  넓이의 반 만 적용하면된다.
+예를들어width: 50px; border-radius: 25px;
+display: flex 하면 display:block 적용 한 것과같다.
+0    000
+이 아이템들이 교차축기준으로 정렬이 되어있지않다면 align-item:center;
+가로축 기준으로 주축이 설정 되어있다면 align : items 가 가로축 기준으로 가운데 정렬이되고
+세로축 기준으로 주축이 설정 되어있다면 align: items가 세로축기준으로 가운데 정렬 됨
+꿀팁 setting header 부모에 displayflex alignitems centerjustifycontent cneter 준후
+첫번째 자식요소에 margn-right auto; 세번째 자식에 margin-leftauto;주면 세개가 맞춰짐
+계속 main-screen 쓰는 이유: 패딩값을 맞추어놓음 
+
+아이콘과 텍스트 두개밖에 없는데도 displayflex alignitems center 쓰는이유? 가로축기준 중앙 정렬 
+
+아이콘, 글자, 아이콘(두가지) 세가지 컬럼으로 구성된 구조에서
+alt-header{ displayflex alignitems center justify-content:center}
+alt-header__column{width:33%;}
+.alt-header__column:first-child{
+    margin-right: auto;
+}
+.alt-header__column:nth-child(2){
+    text-align: center;
+}
+.alt-header__column:last-child{
+    margin-left: auto;
+    display: flex;
+    justify-content: flex-end;
+}
+absolute, center로 사용하는것은 css에서 이상하게 보여서 핵을 사용함 
+
+어떤요소를 fixed하거나 aboslute하는 것은 box, block의 개념이 아니라  다른 layer개념이 된다.
+
+오직 flex-container에 있는 flex-children만 사용 할 수 있는 기능 order : 순서가 바뀜
+.message-row--own .message__bubble{
+    order: 1;    
+}
+.message-row--own .message__time{
+    order: 0;
+}//코드가 너무 김 
+.message-row--own .message__info{
+    flex-direction: row-reverse;
+}// 같은 결과
+
+animation 속성 
+forwards는  keyfrmaes마지막 속성 값을 애니메이션이 끝나고나서도 유지한다
+@keyframes hideSplashScreen{
+    from{
+        opacity:1;
+    }
+    to{
+        opacity:0;
+        visibility: hidden; /* 마우스에걸리지 않게 빼는 것
+        but ,element는 그대로 남아있다.chrome 개발자도구에서 확인 가능 함.  없애고싶다면 자바스크립트 사용해야함*/
+        }
+}
+ /*opacity가 0이 된 상태로 유지하는 거지 element가 사라진 것이 아니라 다른 다른 버튼 클릭 안됨*/
+
+animation 속성 willchange
+will-change: transform;브라우저에게 어떤 것이 변경 될 것인지 미리 말해주는 것 
+주로 흔들리거나 문제가 있을 때 사용하면 좋음  
+.reply:focus-within input{
