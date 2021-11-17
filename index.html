@@ -28,19 +28,25 @@
     <header class="welcome-header">
         <h1 class="welcome-header__title">Welcome to KakaoTalk</h1>
         <p class="welcome-header__text">
-            If you have a Kakao Account, log in with your email or phone number
+        If you have a Kakao Account, log in with your email or phone number
         </p>
     </header>
 
-        <form id="login-form">
-            <input type="text" placeholder="Email or phone number">
-            <input type="password" placeholder="Password">
+        <form action="friends.html" methods="get" id="login-form" required>
+            <input name="username"type="text" placeholder="Email or phone number">
+            <input name="password" type="password" placeholder="Password">
             <input type="submit" value="Log In"/>
             <a href="#">Find Kokoa Account or Password</a>
         </form>
 
 
-
+        <div id="no-mobile">
+            <span>Sorry your screen is too big </span>
+        </div>
+        <div id="no-rotate">
+            <span>Please roate your phone</span>
+        </div>
+        
 
     <script src="https://kit.fontawesome.com/4530e5b00e.js" crossorigin="anonymous"></script>
 </body>

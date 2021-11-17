@@ -1,0 +1,11 @@
+.bage{
+    background-color: tomato;
+    width:25px;
+    height:25px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;/*교차축*/
+    color:white;
+    font-weight: 600;
+}
